@@ -10,7 +10,7 @@ interface ContainerProps {
 
 const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
 
-  const [fiyesta, setFiyesta] = useState<string>();
+  const [fiyesta,  setFiyesta, fiyesta2] = useState<string>();
 
   return (
     <div className="container">
@@ -45,6 +45,10 @@ const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
             </IonSelect>
           </IonItem>
 
+
+          <IonItemDivider>Your Selections</IonItemDivider>
+          <IonItem>FiYESta: {fiyesta ?? '(none selected)'}</IonItem>
+
           <IonListHeader>
             <IonLabel>
               Which FiYESta are you planning on attending?
@@ -54,7 +58,7 @@ const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
 
           <IonItem>
             <IonLabel>FiYESta</IonLabel>
-            <IonSelect value={fiyesta}  multiple={true} onIonChange={e => setFiyesta(e.detail.value)}>
+            <IonSelect value={fiyesta2}  multiple={true} onIonChange={e => setFiyesta(e.detail.value)}>
               <IonSelectOption value="NYC 2020  ">NYC 2020 </IonSelectOption>
               <IonSelectOption value="Vienna 2020  ">Vienna 2020  </IonSelectOption>
               <IonSelectOption value="Scotland Hiking 2020  ">Scotland Hiking 2020 </IonSelectOption>
@@ -63,7 +67,9 @@ const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
           </IonItem>
 
           <IonItemDivider>Your Selections</IonItemDivider>
-          <IonItem>FiYESta: {fiyesta ?? '(none selected)'}</IonItem>
+          <IonItem>FiYESta: {fiyesta2 ?? '(none selected)'}</IonItem>
+
+
         </IonList>
     </div>
   );
